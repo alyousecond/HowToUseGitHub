@@ -35,10 +35,10 @@ $ git push -u origin HEAD
 必要に応じてオーファンブランチを作成していく。
 たとえば、aws/svrなど。
 
-# Xcodeでgit管理を行っている場合
+## Xcodeでgit管理を行っている場合
 プロジェクトディレクトリを全てproduct配下に移動する
 
-# Xcodeでgit管理を行ったいない場合
+## Xcodeでgit管理を行っていない場合
 
 ios/Productディレクトリでcloneを作成
 
