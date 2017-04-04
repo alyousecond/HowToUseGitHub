@@ -16,7 +16,6 @@
 		09884ABF1E89F3E3004C3B56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09884ABD1E89F3E3004C3B56 /* LaunchScreen.storyboard */; };
 		09884ACA1E89F3E3004C3B56 /* HowToUseGitHubTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09884AC91E89F3E3004C3B56 /* HowToUseGitHubTests.m */; };
 		09884AD51E89F3E3004C3B56 /* HowToUseGitHubUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09884AD41E89F3E3004C3B56 /* HowToUseGitHubUITests.m */; };
-		09884AE51E8C985A004C3B56 /* ChangeLog in Resources */ = {isa = PBXBuildFile; fileRef = 09884AE41E8C985A004C3B56 /* ChangeLog */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +55,6 @@
 		09884AD41E89F3E3004C3B56 /* HowToUseGitHubUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HowToUseGitHubUITests.m; sourceTree = "<group>"; };
 		09884AD61E89F3E3004C3B56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09884AE21E89F401004C3B56 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		09884AE41E8C985A004C3B56 /* ChangeLog */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChangeLog; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +85,6 @@
 		09884AA01E89F3E3004C3B56 = {
 			isa = PBXGroup;
 			children = (
-				09884AE41E8C985A004C3B56 /* ChangeLog */,
 				09884AE21E89F401004C3B56 /* README.md */,
 				09884AAB1E89F3E3004C3B56 /* HowToUseGitHub */,
 				09884AC81E89F3E3004C3B56 /* HowToUseGitHubTests */,
@@ -260,7 +257,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				09884ABF1E89F3E3004C3B56 /* LaunchScreen.storyboard in Resources */,
-				09884AE51E8C985A004C3B56 /* ChangeLog in Resources */,
 				09884ABC1E89F3E3004C3B56 /* Assets.xcassets in Resources */,
 				09884ABA1E89F3E3004C3B56 /* Main.storyboard in Resources */,
 			);
@@ -528,6 +524,7 @@
 				09884ADB1E89F3E3004C3B56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		09884ADC1E89F3E3004C3B56 /* Build configuration list for PBXNativeTarget "HowToUseGitHubTests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +533,7 @@
 				09884ADE1E89F3E3004C3B56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		09884ADF1E89F3E3004C3B56 /* Build configuration list for PBXNativeTarget "HowToUseGitHubUITests" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +542,7 @@
 				09884AE11E89F3E3004C3B56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

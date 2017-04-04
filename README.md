@@ -1,36 +1,59 @@
 #ios
 このプロジェクトはGit/GitHubをXcodeから利用する場合の手順並びにGit/GitHum用に準備したプロジェクトになります。 
 
-1.はじめに  
+1.はじめにリポジトリの準備  
 =======================================================================
-まずはじめにGitHub上にリポジトリを作成する
-URLを取得する
-https://github.com/alyousecond/HowToUseGitHub.git
 
-Source Control >> master >> Configure xxxxx
-Remotes >> Add Remoteで上記アドレスを登録する
+GitHubでリポジトリ作成
 
-[ケース1] **Xcodeでプロジェクトを作成した場合**  
-ローカルの全てのcommitが完了したら、pushする  
-Xcode上だけでは全てのcommitが完了していないケースもあるもでコマンドラインで確認する
+スケルトン用プロジェクトディレクトリを作成
 
-$ git status
+$ cd App/Repository
 
-必要に応じて処理を行う。管理対象から除外したい場合に.gitignoreファイル/ディレクトリを追記
+$ mkdir $ProjectName$
 
-コミットが完了したらpushを行う[Xcode/コマンド]
+オーファンブランチ作成
 
-$ git push -u origin master
+$ cd $ProjectName$
 
-[ケース2]**既にGitHub上にあるプロジェクトを利用する場合**
+$ git init
 
-ローカルにリモートリポジトリのクローンを作成(xxxはプロジェクト名)
+$ git remote add origin https://github.com/alyousecond/$ProjectName$.git
 
-$ git clone https://github.com/alyousecond/xxxxxxxxxx.git
+$ git checkout --orphan ios/master
+$ echo "#ios" > README.md
+$ git add .
+$ git commit -m 'first commit'
+$ git push -u origin HEAD
 
-ローカルにクローンがあり、リモートの変更を反映させる場合にはpullを行う
+$ git checkout --orphan doc/master
+$ echo "#doc" > README.md
+$ git add .
+$ git commit -m 'first commit'
+$ git push -u origin HEAD
 
-$ git pull 
+必要に応じてオーファンブランチを作成していく。
+たとえば、aws/svrなど。
+
+# Xcodeでgit管理を行っている場合
+プロジェクトディレクトリを全てproduct配下に移動する
+
+# Xcodeでgit管理を行ったいない場合
+
+ios/Productディレクトリでcloneを作成
+
+$ cd App/Product/$ProjectName$/ios
+
+$ git clone https://github.com/alyousecond/$ProjectName$.git
+
+Xcodeからプロジェクトファイルのコピー
+
+ソース以外のdocなども必要に応じてcloneを作成
+
+$ cd App/Product/$ProjectName$/doc
+
+$ git clone https://github.com/alyousecond/$ProjectName$.git
+
 
 2.コミット
 =======================================================================
@@ -94,37 +117,44 @@ $ git status
 
 6.ブランチパターン
 =======================================================================
+[ルートブランチ] 
+オーファンブランチとして作成
+
+ios: iosソース
+aws: awsソース
+doc: ドキュメント
+
 [開発ブランチ]  
 用途：開発の主軸ブランチ  
-名前：develop  
+名前：*/develop  
 
 [フィーチャーブランチ]  
 用途：開発の作業用ブランチ  
 *しばらくはdevelopブランチで開発作業*  
-名前：feature/*  
+名前：*/feature/*  
 
-派生元：develop  
-マージ先：develop  
+派生元：*/develop  
+マージ先：*/develop  
 
 [リリースブランチ]  
 用途：リリース準備用ブランチ  
-名前：release/*  
+名前：*/release/*  
 
 派生元：release  
-マージ先：develop/master  
+マージ先：*/develop, */master  
 
 masterにマージ後にバージョンタグを生成  
 
 [製品ブランチ]  
 用途：リリースされたバージョンを管理するブランチ  
-名前：master  
+名前：*/master  
 
 [ホッチフィックスブランチ]  
 用途：緊急リリースのためのブランチ。製品ブランチから派生。  
-名前：hotfix/*  
+名前：*/hotfix/*  
 
-派生元：master  
-マージ先：develop/master  
+派生元：*/master  
+マージ先：*/develop, */master  
 
 masterにマージ後にバージョンタグを生成  
 
