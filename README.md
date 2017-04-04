@@ -20,17 +20,17 @@ $ git init
 
 $ git remote add origin https://github.com/alyousecond/$ProjectName$.git
 
-$ git checkout --orphan ios/master
-$ echo "#ios" > README.md
-$ git add .
-$ git commit -m 'first commit'
-$ git push -u origin HEAD
+$ git checkout --orphan ios/master  
+$ echo "#ios" > README.md  
+$ git add .  
+$ git commit -m 'first commit'  
+$ git push -u origin HEAD  
 
-$ git checkout --orphan doc/master
-$ echo "#doc" > README.md
-$ git add .
-$ git commit -m 'first commit'
-$ git push -u origin HEAD
+$ git checkout --orphan doc/master  
+$ echo "#doc" > README.md  
+$ git add .  
+$ git commit -m 'first commit'  
+$ git push -u origin HEAD  
 
 必要に応じてオーファンブランチを作成していく。
 たとえば、aws/svrなど。
