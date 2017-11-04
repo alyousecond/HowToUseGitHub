@@ -159,8 +159,22 @@ masterにマージ後にバージョンタグを生成
 
 参考　http://keijinsonyaban.blogspot.jp/2010/10/a-successful-git-branching-model.html
 
-7.まとめ
+7.その他
+=======================================================================
+Author情報の変更
+
+$ git config --global --edit
+
+or
+
+$ git config --global user.name "Your Name"
+$ git config --global user.email you@example.com
+
+8.まとめ
 =======================================================================
 Xcode側でできることには限りがあるので、コマンドのstatus確認をする
 
 $ git status
+
+
+
