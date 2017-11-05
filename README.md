@@ -168,7 +168,20 @@ $ git config --global --edit
 or
 
 $ git config --global user.name "Your Name"
+
 $ git config --global user.email you@example.com
+
+除外ファイルの設定　.gitignore
+
+.DS_Store
+
+'# Include only project data
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+
+既に管理対象に入っているファイルがある場合はキャッシュから除外する
+
+$ git rm --cached /path/to/file.txt
 
 8.まとめ
 =======================================================================
