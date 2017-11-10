@@ -123,23 +123,26 @@ ios: iosソース
 aws: awsソース
 doc: ドキュメント
 
+※各ブランチで複数の枝はを管理する場合には、必ず__branch_name__/*** とすること。
+__branch_name__/とした場合には、__branch_name__/***を作成できなくなる
+
 [開発ブランチ]
 用途：開発の主軸
-名前：*/develop  
+名前：*/develop/[current|x.x.x]
 
 [フィーチャーブランチ]  
 用途：開発の作業用ブランチ  
 *しばらくはdevelopブランチで開発作業*  
 名前：*/feature/*  
 
-派生元：*/develop  
-マージ先：*/develop  
+派生元：*/develop/*
+マージ先：*/develop/*
 
 [リリースブランチ]  
 用途：リリース準備用ブランチ  
 名前：*/release/*  
 
-派生元：*/develop
+派生元：*/develop/*
 マージ先：*/develop, */master  
 
 masterにマージ後にバージョンタグを生成  
@@ -159,7 +162,44 @@ masterにマージ後にバージョンタグを生成
 
 参考　http://keijinsonyaban.blogspot.jp/2010/10/a-successful-git-branching-model.html
 
-7.その他
+7.開発時の流れ
+=======================================================================
+
+$ git clone -b ios/develop/current https://github.com/xxx/xxx.git
+
+$ git checkout -b ios/feature/dev1
+
+### 開発作業
+
+$ git commit -a
+
+$ git push -u origin HEAD
+
+### Pull Request
+
+$ git checkout ios/develop/current
+
+$ git fetch <- リモート追跡ブランチのリポートリポジトリの情報を反映
+
+$ git merge origin/ios/develop/current <- ローカルブランチにリポート追跡ブランチの内容を反映
+
+### [パターン1] featureにdevelopブランチをマージする
+
+$ git checkout ios/feature/dev1
+
+$ git merge --no-ff ios/develop/current <- ブランチの履歴を残すためにnon fast-forwardとする
+
+
+### [パターン2] featureブランチを一度削除してから、再度ブランチを作成する
+
+$ git branch -d ios/feature/dev2 <- ローカルfeatureブランチの削除
+
+$ git push --delete origin ios/feature/dev2 <- リモートブランチの削除
+
+### 参考
+https://qiita.com/forest1/items/db5ac003d310449743ca
+
+8.その他
 =======================================================================
 Author情報の変更
 
@@ -185,7 +225,7 @@ $ git config --global user.email you@example.com
 
 $ git rm --cached /path/to/file.txt
 
-8.まとめ
+9.まとめ
 =======================================================================
 Xcode側でできることには限りがあるので、コマンドのstatus確認をする
 
