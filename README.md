@@ -7,9 +7,9 @@ GitHubでリポジトリ作成
 
 スケルトン用プロジェクトディレクトリを作成
 
-$ cd App/Repository
+```$ cd App/Repository```
 
-$ mkdir $ProjectName$
+```$ mkdir $ProjectName$```
 
 オーファンブランチ作成
 (どこからも派生したいないルートツリー）
@@ -178,7 +178,7 @@ __branch_name__/とした場合には、__branch_name__/***を作成できなく
 　派生元：*/master
 　マージ先：*/develop, */master
 　
-　*masterにマージ後にバージョンタグを生成  
+　*masterにマージ後にバージョンタグを生成
 
 参考　http://keijinsonyaban.blogspot.jp/2010/10/a-successful-git-branching-model.html
 
