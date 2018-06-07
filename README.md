@@ -266,6 +266,10 @@ $ git config --global user.email you@example.com
 
 $ git rm --cached /path/to/file.txt
 
+Push時のデフォルト動作の設定を変更する
+
+$ git config --global push.default upstream // デフォルトをupstreamに設定
+
 10.まとめ
 =======================================================================
 Xcode側でできることには限りがあるので、コマンドのstatus確認をする
