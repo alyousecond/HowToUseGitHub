@@ -96,7 +96,11 @@ $ git branch [ブランチ名]
 
 $ git checkout [ブランチ名]  
 
-ブランチの削除　[Xcode/コマンド]  
+ローカルブランチの削除　[Xcode/コマンド]
+
+$ git branch -D [ブランチ名]
+
+リモートブランチの削除　[Xcode/コマンド]
 
 $ git push --delete origin [ブランチ名]   
 
