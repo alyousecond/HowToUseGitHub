@@ -6,30 +6,33 @@ GitHubでリポジトリ作成
 
 スケルトン用プロジェクトディレクトリを作成
 
-```$ cd App/Repository```
-
-```$ mkdir $ProjectName$```
+```
+$ cd App/Repository
+$ mkdir $ProjectName$
+```
 
 オーファンブランチ作成  
 (どこからも派生したいないルートツリー）
 
-```$ cd $ProjectName$```
+```
+$ cd $ProjectName$
 
-```$ git init```
+$ git init
 
-```$ git remote add origin https://github.com/alyousecond/$ProjectName$.git```
+$ git remote add origin https://github.com/alyousecond/$ProjectName$.git
 
-```$ git checkout --orphan ios/master```  
-```$ echo "#ios" > README.md```  
-```$ git add .```  
-```$ git commit -m 'first commit'```  
-```$ git push -u origin HEAD```  
+$ git checkout --orphan ios/master
+$ echo "#ios" > README.md
+$ git add .  
+$ git commit -m 'first commit'
+$ git push -u origin HEAD
 
-```$ git checkout --orphan doc/master```  
-```$ echo "#doc" > README.md```  
-```$ git add .```  
-```$ git commit -m 'first commit'```  
-```$ git push -u origin HEAD```  
+$ git checkout --orphan doc/master  
+$ echo "#doc" > README.md  
+$ git add .  
+$ git commit -m 'first commit'  
+$ git push -u origin HEAD  
+```
 
 必要に応じてオーファンブランチを作成していく。  
 たとえば、aws/svrなど。
@@ -41,17 +44,19 @@ GitHubでリポジトリ作成
 
 ios/Productディレクトリでcloneを作成
 
-```$ cd App/Product/$ProjectName$/ios```
-
-```$ git clone https://github.com/alyousecond/$ProjectName$.git```
+```
+$ cd App/Product/$ProjectName$/ios
+$ git clone https://github.com/alyousecond/$ProjectName$.git
+```
 
 Xcodeからプロジェクトファイルのコピー
 
 ソース以外のdocなども必要に応じてcloneを作成
 
-```$ cd App/Product/$ProjectName$/doc```
-
-```$ git clone https://github.com/alyousecond/$ProjectName$.git```
+```
+$ cd App/Product/$ProjectName$/doc
+$ git clone https://github.com/alyousecond/$ProjectName$.git
+```
 
 
 ## 2.コミット・切り戻し・取り消し
@@ -181,7 +186,7 @@ __branch_name__/とした場合には、__branch_name__/\***を作成できな�
 ## 8.開発時の流れ
 
 派生元にブランチに切り替え  
-```$ git checkout master``` もしくは ```git checkout ios/develop/current```  
+```$ git checkout master``` もしくは  ```git checkout ios/develop/current```  
 
 新しいブランチの作成  
 ```$ git checkout -b ios/develop/foobar```  
